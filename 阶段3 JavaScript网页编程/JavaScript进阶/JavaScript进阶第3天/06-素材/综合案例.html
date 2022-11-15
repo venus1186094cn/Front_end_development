@@ -74,7 +74,34 @@
 
 
   <script>
-
+    function Modal(title = '', message = '') {
+      this.title = title
+      this.message = message
+      this.modalBox = document.createElement('div')
+      this.modalBox.className = 'modal'
+      this.modalBox.innerHTML = `
+        <div class="header">${this.title} <i>x</i></div>
+        <div class="body">${this.message}</div>
+      `
+    }
+    Modal.prototype.open = function () {
+      if (document.querySelector('div')) return
+      document.body.appendChild(this.modalBox)
+      this.modalBox.querySelector('i').addEventListener('click', () => {
+        this.close()
+      })
+    }
+    Modal.prototype.close = function () {
+      document.body.removeChild(this.modalBox)
+    }
+    document.querySelector('#delete').addEventListener('click', () => {
+      const m = new Modal('温馨提示', '您没有删除权限操作')
+      m.open()
+    })
+    document.querySelector('#login').addEventListener('click', () => {
+      const l = new Modal('温馨提示', '您没有删除权限登录')
+      l.open()
+    })
   </script>
 </body>
 

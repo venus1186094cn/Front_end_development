@@ -10,13 +10,17 @@
 
 <body>
   <script>
-    // const str = 'pink'
-    // console.log(str.length)
-    // const num = 12
-    // console.log(num.toFixed(2))
-    // const str = 'pink'
-    // js 底层完成， 把简单数据类型包装为了引用数据类型
-    // const str = new String('pink')
+    const o = { uname: 'pink', age: 18 }
+
+    // 对象的静态方法，返回一个数组
+    console.log(Object.values(o))
+    console.log(Object.keys(o))
+
+    const oo = {}
+    Object.assign(oo, { age: 18 })
+    oo.uname = 'venus'
+    console.log(o)
+    console.log(oo)
   </script>
 </body>
 

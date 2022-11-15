@@ -15,11 +15,11 @@
     <div index="1" data-index="2">我是div</div>
     <span>123</span>
     <script>
-        $(function() {
+        $(function () {
             //1. element.prop("属性名") 获取元素固有的属性值
             console.log($("a").prop("href"));
             $("a").prop("title", "我们都挺好");
-            $("input").change(function() {
+            $("input").change(function () {
                 console.log($(this).prop("checked"));
 
             });
@@ -33,11 +33,6 @@
             console.log($("span").data("uname"));
             // 这个方法获取data-index h5自定义属性 第一个 不用写data-  而且返回的是数字型
             console.log($("div").data("index"));
-
-
-
-
-
         })
     </script>
 </body>
